@@ -1,0 +1,22 @@
+name: CI
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: extract node version
+        id: nvm
+        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+      - run: npm ci
+      - run: npm run build
+      - name: create npm package
+        id: pack
+        run: echo ::set-output name=PACKAGE::$(npm -s pack)
+      - uses: actions/upload-artifact@v1
+        with:
+          name: package.tgz
+          path: '${{ steps.pack.outputs.PACKAGE }}'

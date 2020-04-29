@@ -1,0 +1,23 @@
+{
+	"name": "node-typescript-template",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"compile": "tsc",
+		"test": "tap './dist/test/**/*.test.js'",
+		"build": "npm -s run compile && npm -s run test"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/tap": "^14.10.0",
+		"tap": "^14.10.7",
+		"typescript": "^3.8.3"
+	},
+	"files": [
+		"/README.md",
+		"/.nvmrc",
+		"/dist/lib/"
+	]
+}
