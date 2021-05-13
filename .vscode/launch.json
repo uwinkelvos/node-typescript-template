@@ -5,16 +5,14 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"type": "node",
+			"type": "pwa-node",
 			"request": "launch",
 			"name": "run file",
-			"skipFiles": [
-				"<node_internals>/**"
-			],
+			"skipFiles": ["<node_internals>/**"],
 			"program": "${file}",
-			"outFiles": [
-				"${workspaceFolder}/dist/**/*.js"
-			],
+			"runtimeVersion": "14",
+			"outFiles": ["${workspaceFolder}/dist/**/*.js"],
+			"sourceMaps": true,
 			"outputCapture": "std",
 			"preLaunchTask": "${defaultBuildTask}"
 		}
