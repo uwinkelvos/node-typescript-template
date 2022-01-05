@@ -1,6 +1,6 @@
 import { test } from "tap";
-import { TEMPLATE } from "../lib/index";
+import { TEMPLATE } from "../index";
 
-test('TEMPLATE', async tap => {
+test("TEMPLATE", async tap => {
 	tap.equal(TEMPLATE, "TEMPLATE");
 });
